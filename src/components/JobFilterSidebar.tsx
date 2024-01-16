@@ -43,7 +43,8 @@ export default async function JobFilterSidebar({
     )) as string[]; //filter(boolean) retourne que les location qui ont une valeur
   return (
     <aside className="sticky top-0 h-fit rounded-lg border bg-background p-4 md:w-[260px]">
-      <form action={filterJobs}>
+      <form action={filterJobs} key={JSON.stringify(defaultValues)}>
+        {/* key json stringify pour vider le form uniquement si on change de page le refresh de la page le vide pas*/}
         <div className="space-y-4">
           <div className=" flex flex-col gap-2">
             <Label htmlFor="q">Search</Label>
